@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="lib/bs4/css/bootstrap.css">
+
+
+    <title>Tally's Book Shop</title>
+</head>
+<header class="header">Tally's Book Shop! </header>
+
+<body onload="onInit()">
+    <div class="wrapper"></div>
+    <button class="btn-add-book" onclick="getAddBookModal()" data-toggle="modal" data-target="#modal">Add a new book</button>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add a new book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="book-name-label">Please enter book name</label>
+                            <input type="text" class="form-control book-name" style="height: 25px;" >
+                        </div>
+                        <div class="form-group">
+                            <label  class="book-price-label">Please enter book price</label>
+                            <input class="form-control book-price" style="height: 25px;" ></input>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                    <button type="button" class="btn uniqe btn-primary" data-dismiss="modal" onclick="readAndAddNewBook()">Add Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Read-modal -->
+<div class="modal fade" id="book-details-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="read-modal-title" id="exampleModalLabel">Book Details</h5>
+              <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="read-modal-body">
+         
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <table class="table-books table">
+        <th>Book name</th>
+        <th>Book ID</th>
+        <th>Book price</th>
+        <th>Actions</th>
+        <tbody class="tbody-books"></tbody>
+    </table>
+    </div>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/bs4/js/bootstrap.bundle.js"></script>
+    <script src="js/utils-service.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
